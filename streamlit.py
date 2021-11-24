@@ -1,4 +1,3 @@
-from os import name
 from main import driver_code
 import streamlit as st
 import json
@@ -10,13 +9,8 @@ EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 st.title('ACTIVITIES REPORT')
 d1 = str(st.date_input('start date'))
 d2 = str(st.date_input('End date'))
-
 d1 = str(datetime.strptime(d1, '%Y-%m-%d').strftime('%d/%m/%Y'))
 d2 = str(datetime.strptime(d2, '%Y-%m-%d').strftime('%d/%m/%Y'))
-st.write(type(d1))
-d1
-st.write(type(d2))
-d2
 
 with open('data.json') as json_file:
     json_output = json.load(json_file)
